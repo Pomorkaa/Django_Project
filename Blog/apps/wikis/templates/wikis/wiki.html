@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} {{wiki.wiki_name}} {% endblock %}
+{% block content %}
+    <h1>{{wiki.wiki_name}}</h1>
+    <p>Последняя редакция от: {{wiki.wiki_date}}</p>
+    <p><i> Создано для департамента: {{wiki.wiki_autor}}</i></p>
+    <a href="{{wiki.wiki_url}}"> ССЫЛКА НА ДОКУМЕНТАЦИЮ</a>
+{% endblock %}
+

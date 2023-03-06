@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} Мои работы {% endblock %}
+{% block content %}
+    {% if articles %}
+        {% for article in articles %}
+            <a href = "{% url 'articles:detail' article.id %}">{{article.article_title}}</a><br>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} Мои работы {% endblock %}
+{% block content %}
+<h1>тест1 </h1>
+    {% if wiki %}
+        {% for wiki in wiki %}
+        <a href = "{% url 'wikis:detail' wiki.id %}">{{wiki.wiki_name}}</a><br>{% endfor %}
+    {% endif %}
+{% endblock %}
