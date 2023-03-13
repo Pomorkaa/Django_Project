@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Главная страница {% endblock %}
+{% block content %}
+    <h1>{{main.main_title}}</h1>
+    <img src="{{main.main_ipg.url}}" alt="main_pic">
+    <p>{{main.main_text}}</p>
+    <p><i>{{main.pub_date}}</i></p>
+{% endblock %}

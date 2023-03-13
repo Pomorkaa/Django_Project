@@ -2,6 +2,7 @@
 
 {% block title %} Мои работы {% endblock %}
 {% block content %}
+    <h1>Всякие разные статеечки</h1>
     {% if articles %}
         {% for article in articles %}
             <a href = "{% url 'articles:detail' article.id %}">{{article.article_title}}</a><br>

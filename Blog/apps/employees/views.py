@@ -2,11 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from .models import employees
 
-def test(request):
-    return HttpResponse('test')
+def employee(request):
+    employee = employees.objects.all()
+    return render(request, 'employees/list.html', {'employee': employee})
 
-def companyUSER(request):
-    return HttpResponse('Раздел с информацией о сотрудниках компании')
 
 # Create your views here.

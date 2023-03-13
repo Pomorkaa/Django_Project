@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Сотрудники {% endblock %}
+{% block content %}
+    <h1>Здесь находятся сотрудники, которых администратор добавил в систему</h1>
+    {% if employee %}
+        {% for i in employee %}
+            <h6>{{i.employees_name}}</h6><br>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
