@@ -1,0 +1,12 @@
+.vscode/
+env/
+*/__pycache__/
+
+
+.idea/
+/media/
+
+
+*/migrations/*
+!*/migrations/__init__.py
+
