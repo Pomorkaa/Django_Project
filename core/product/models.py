@@ -47,6 +47,7 @@ class Trip(models.Model):
     """Сама экскурсия"""
     company = models.ForeignKey(Company, verbose_name = 'Компания', on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=500, verbose_name="Название")
+    decription = models.TextField(verbose_name='Описание', null=True, blank=True)
     type = models.ForeignKey(Trip_type, verbose_name = 'Тип экскурси', on_delete=models.SET_NULL, null=True)
     number = models.CharField(max_length=50, verbose_name="Транспорт если есть", null=True, blank=True)
     seets= models.IntegerField(verbose_name="Количество мест",null=True, blank=True)
