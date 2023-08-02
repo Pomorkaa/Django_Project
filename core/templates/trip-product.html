@@ -51,7 +51,7 @@
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#top" class="smoothScroll">Главная</a></li>
+                         <li><a href="/" class="smoothScroll">Главная</a></li>
                          <li><a href="#about" class="smoothScroll">О нас</a></li>
                          <li><a href="#team" class="smoothScroll">Наша команда</a></li>
                          <li><a href="#courses" class="smoothScroll">Экскурсии</a></li>
@@ -77,9 +77,8 @@
           <div class="container">
                <div class="row">
                     <div class="row">
-                         {% for item in data.trip %}
                          <div class="row" style="padding:10px;">
-                              <div class="col-md-6 col-sm-6">
+                              <div class="col-md-12 col-sm-12">
 
                                    <div class="courses-top">
                                         <div class="courses-image">
@@ -94,7 +93,7 @@
                                    </div>
 
                               </div>
-                              <div class="col-md-6 col-sm-6";>
+                              <div class="col-md-12 col-sm-12";>
 
                                  
                                    <div class="courses-detail">
@@ -109,21 +108,20 @@
                                                   <a href="#"><span>{{item.price}} P</span></a>
                                              </div>
                                         </div>
-     
-                                        <p>
-                                        {% if item.decription|length <= 350 %}
-                                        {{ item.decription|safe }}
-                                        {% else %}
-                                        {{ item.decription|safe|truncatechars_html:350 }}</p>
-                                        <a href="{% url 'detail' item.id %}" title="{{ item.name }}" class="show-more">Показать подробнее</a>
-                                        {% endif %}
+                                        <h3>Описание путешествия</h3>
+                                        <p>{{ item.decription}}</p>
+                                        <h3>Детали поездки</h3>
+                                        <p>{{ item.decription}}</p>
+                                        <h3>Дополнительная информация</h3>
+                                        <p>{{ item.decription}}</p>
+
+               
                                    </div>
 
                                   
 
                               </div>
                          </div>
-                         {%endfor%}
                     </div>
                </div>
           </div>

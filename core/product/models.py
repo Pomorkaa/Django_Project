@@ -47,7 +47,9 @@ class Trip(models.Model):
     """Сама экскурсия"""
     company = models.ForeignKey(Company, verbose_name = 'Компания', on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=500, verbose_name="Название")
-    decription = models.TextField(verbose_name='Описание', null=True, blank=True)
+    decription = models.TextField(verbose_name='Описание машрута', null=True, blank=True)
+    decription_trip = models.TextField(verbose_name='Детали поездки', null=True, blank=True)
+    decription_other = models.TextField(verbose_name='Дополнительная информация', null=True, blank=True)
     type = models.ForeignKey(Trip_type, verbose_name = 'Тип экскурси', on_delete=models.SET_NULL, null=True)
     number = models.CharField(max_length=50, verbose_name="Транспорт если есть", null=True, blank=True)
     seets= models.IntegerField(verbose_name="Количество мест",null=True, blank=True)
@@ -56,7 +58,7 @@ class Trip(models.Model):
     data = models.DateTimeField(verbose_name='Дата и время начала экскурсии', null=True, blank=True)
     time = models.CharField(max_length=400, verbose_name="Продолжительность экскурсии")
     status = models.ForeignKey(Status, verbose_name = 'Статус', on_delete=models.SET_NULL, null=True)
-    details = models.TextField(max_length=500, verbose_name="Дополнительная информация", default=None, null=True, blank=True)
+    details = models.TextField(max_length=500, verbose_name="Короткий баннер для сайта", default=None, null=True, blank=True)
     price = models.IntegerField(verbose_name="Стоимость",null=True,blank=True)
     photo = models.ImageField(verbose_name='Рекламный баннер', upload_to='media/trip')
     stars = models.PositiveIntegerField(

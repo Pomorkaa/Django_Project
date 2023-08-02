@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from product.models import Trip
 import random
-
+from django.http import HttpResponse, Http404
 # Create your views here.
 # class ShowProductListView(ListView):
 #     """вывод экскурсий"""
@@ -46,3 +46,10 @@ class TripListView(ListView):
         data['trip'] = Trip.objects.all()[:10]
 
         return data
+    
+def detail_trip(request, id):
+    try:
+        trip = Trip.objects.get(id=id)
+    except Exception:
+        return Http404('Экскурсия не найдена!')
+    return render(request, 'trip-product.html', {'item': trip})
