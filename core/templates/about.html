@@ -3,7 +3,7 @@
 
 <head>
 
-     <title>Наши Экскурсии</title>
+     <title>Наша комнада</title>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
      <meta name="description" content="">
@@ -25,54 +25,69 @@
      <!-- шапка -->
      {%include 'components/header.html'%}
 
-     <section id="courses">
+     <section >
           <div class="container">
                <div class="row">
                     <div class="row">
-                         {% for item in data.trip %}
+                         <h2>Наша команда:</h2>
+                         {% for item in data.manager %}
                          <div class="row" style="padding:10px;">
                               <div class="col-md-6 col-sm-6">
 
                                    <div class="courses-top">
-                                        <div class="courses-image">
-                                             <a href="{% url 'detail' item.id %}">
-                                                  <img src={{item.photo.url}} class="img-responsive" alt="">
-                                             </a>
-                                        </div>
-                                        <div class="courses-date">
-                                             <span><i class="fa fa-calendar"></i>{{item.data}}</span>
-                                             <span><i class="fa fa-clock-o"></i> {{item.time}}</span>
+                                        <div>
+                                             <img src={{item.photo.url}} class="img-responsive" alt="">
                                         </div>
                                    </div>
-
                               </div>
                               <div class="col-md-6 col-sm-6";>
-
-                                 
                                    <div class="courses-detail">
-                                        <h3><a href="{% url 'detail' item.id %}">{{item.name}} </a></h3>
+                                        <h3><a href="{% url 'detail' item.id %}">{{item.prof}} </a></h3>
 
                                         <div class="courses-info">
                                              <div class="courses-author">
-                                                  <img src={%  static "images/author-image1.jpg" %} class="img-responsive" alt="">
                                                   <span>{{item.company.name}}</span>
                                              </div>
-                                             <div class="courses-price">
-                                                  <a href="#"><span>{{item.price}} P</span></a>
+                                             <div >
+                                                  <a href="#"><span>{{item.phone}} </span></a>
                                              </div>
                                         </div>
      
                                         <p>
-                                        {% if item.decription|length <= 350 %}
-                                        {{ item.decription|safe }}
-                                        {% else %}
-                                        {{ item.decription|safe|truncatechars_html:350 }}</p>
-                                        <a href="{% url 'detail' item.id %}" title="{{ item.name }}" class="show-more">Показать подробнее</a>
-                                        {% endif %}
+                                        {{ item.short_description }}</p>
                                    </div>
+                              </div>
+                         </div>
+                         {%endfor%}
 
-                                  
 
+                         <h2>Наши лучшие агенты:</h2>
+                         {% for item in data.agent %}
+                         <div class="row" style="padding:10px;">
+                              <div class="col-md-6 col-sm-6">
+
+                                   <div class="courses-top">
+                                        <div>
+                                             <img src={{item.photo.url}} class="img-responsive" alt="">
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6";>
+                                   <div class="courses-detail">
+                                        <h3><a href="{% url 'detail' item.id %}">Представитель компании {{item.name}} </a></h3>
+
+                                        <div class="courses-info">
+                                             <div class="courses-author">
+                                                  <span>{{item.company.name}}</span>
+                                             </div>
+                                             <div >
+                                                  <a href="#"><span>{{item.phone}} </span></a>
+                                             </div>
+                                        </div>
+     
+                                        <p>
+                                        {{ item.short_description }}</p>
+                                   </div>
                               </div>
                          </div>
                          {%endfor%}

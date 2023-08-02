@@ -1,0 +1,49 @@
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <div class="footer-info">
+          {%for item in data.contacts%}
+          <div class="section-title">
+            <h2>{{item.name}}</h2>
+          </div>
+          <p>Адрес: {{item.adress}}</p>
+          <p>Телефон: {{item.phone}}</p>
+          {%endfor%}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="footer-info">
+          <div class="section-title">
+            <h2>Документация:</h2>
+          </div>
+          <div class="footer_menu">
+            <ul>
+              {% for item in data.documents%}
+              <li><a href="{{item.file.url}}">{{item.title}}</a></li>
+              {%endfor%}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="footer-info">
+          <div class="section-title">
+            <h2>Партнеры нашей бонусной системы:</h2>
+          </div>
+
+          <div class="footer_menu">
+            <ul>
+              {%for item in data.bonus%}
+              <li><a href="{{ item.site}}">{{item.name}}</a></li>
+              {%endfor%}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

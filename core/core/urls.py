@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf.urls.static import static
 from django.conf import settings
+from company.views import AboutListView
 
 from product.views import ShowProductListView ,TripListView , detail_trip                 #, ProducDetailView
 
@@ -26,6 +27,9 @@ urlpatterns = [
     path('',ShowProductListView.as_view(), name='index' ),
     path('trip/',TripListView.as_view(), name='trip' ),
     path('trip/<int:id>/', detail_trip, name='detail'),
+    path('about/',AboutListView.as_view(), name='about' ),
+    
+    
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
