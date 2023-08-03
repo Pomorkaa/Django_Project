@@ -36,9 +36,9 @@
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12">
-                                             <h1>Distance Learning Education Center</h1>
-                                             <h3>Our online courses are designed to fit in your industry supporting all-round with latest technologies.</h3>
-                                             <a href="#feature" class="section-btn btn btn-default smoothScroll">Discover more</a>
+                                             <h1>Место где сбываютсяваши мечты</h1>
+                                             <h3>Загадайте желание и напишите нам. Мы сможем реализовать его в лучшем виде</h3>
+                                             {% comment %} <a href="#feature" class="section-btn btn btn-default smoothScroll">Discover more</a> {% endcomment %}
                                         </div>
                                    </div>
                               </div>
@@ -48,9 +48,9 @@
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12">
-                                             <h1>Start your journey with our practical courses</h1>
-                                             <h3>Our online courses are built in partnership with technology leaders and are designed to meet industry demands.</h3>
-                                             <a href="#courses" class="section-btn btn btn-default smoothScroll">Take a course</a>
+                                             <h1>А если вы не можете определиться наши специалисты помогут найти развлечение по душе</h1>
+                                             <h3>Каждый из наших гидов посетил более 1000 мест и точно знает о чем говорит :)</h3>
+                                             {% comment %} <a href="#courses" class="section-btn btn btn-default smoothScroll">Take a course</a> {% endcomment %}
                                         </div>
                                    </div>
                               </div>
@@ -60,9 +60,9 @@
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12">
-                                             <h1>Efficient Learning Methods</h1>
-                                             <h3>Nam eget sapien vel nibh euismod vulputate in vel nibh. Quisque eu ex eu urna venenatis sollicitudin ut at libero. Visit <a rel="nofollow" href="https://www.facebook.com/templatemo">templatemo</a> page.</h3>
-                                             <a href="#contact" class="section-btn btn btn-default smoothScroll">Let's chat</a>
+                                             <h1>Вы можете заниматься работой и домашними делами</h1>
+                                             <h3>Делаем путешествия, налаживаем логистику, продумываем кажду минуту вашего отпуска, вам не нужно тратить на это время <a rel="nofollow" href="https://www.facebook.com/templatemo">templatemo</a> page.</h3>
+                                             {% comment %} <a href="#contact" class="section-btn btn btn-default smoothScroll">Let's chat</a> {% endcomment %}
                                         </div>
                                    </div>
                               </div>
@@ -80,24 +80,24 @@
                     <div class="col-md-4 col-sm-4">
                          <div class="feature-thumb">
                               <span>01</span>
-                              <h3>Trending Courses</h3>
-                              <p>Known is free education HTML Bootstrap Template. You can modify in any way and use this for your website.</p>
+                              <h3>Экскурсии в труднодоступные места</h3>
+                              <p>Покажем вам то-что другие не могут увидеть</p>
                          </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                          <div class="feature-thumb">
                               <span>02</span>
-                              <h3>Books & Library</h3>
-                              <p>You are allowed to use Known HTML Template for your commercial or non-commercial websites.</p>
+                              <h3>Индивидуальные туры</h3>
+                              <p>Соберем маршрут под ваши предпочтения</p>
                          </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                          <div class="feature-thumb">
                               <span>03</span>
-                              <h3>Certified Teachers</h3>
-                              <p>Please spread a word about us. Template redistribution is NOT allowed on any download website.</p>
+                              <h3>Лучшие гиды страны</h3>
+                              <p>Наши сотрудники проходят 4 обучения в год, чтобы предоставить вам лучший сервис</p>
                          </div>
                     </div>
 
@@ -106,7 +106,7 @@
      </section>
 
 
-     <!-- ABOUT -->
+     {% comment %} <!-- ABOUT -->
      <section id="about">
           <div class="container">
                <div class="row">
@@ -158,7 +158,7 @@
 
                </div>
           </div>
-     </section>
+     </section> {% endcomment %}
 
 
      <!-- TEAM -->
@@ -224,7 +224,7 @@
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Популярные экскурчии <small>Пришло время для новых эмоций!</small></h2>
+                              <h2>Популярные экскурсии <small>Пришло время для новых эмоций!</small></h2>
                          </div>
 
                          <div class="owl-carousel owl-theme owl-courses">
@@ -277,87 +277,30 @@
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Student Reviews <small>from around the world</small></h2>
+                              <h2>Отзывы <small>Лучше всего о нас говорят наши клиенты</small></h2>
                          </div>
 
+
+                        
                          <div class="owl-carousel owl-theme owl-client">
+                              {%for item in data.feedback %}
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src={%  static "images/tst-image1.jpg" %} class="img-responsive" alt="">
+                                             <img src={%  static "images/1.jpeg" %} class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>Jackson</h4>
-                                             <span>Shopify Developer</span>
+                                             <h4>{{item.name}}</h4>
                                         </div>
-                                        <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
+                                        <p>{{item.message}}</p>
                                    </div>
+                                   {% for i in "x"|ljust:item.stars %}
+                                   <i class="fa fa-star"></i>
+                                   {% endfor %}
                               </div>
-
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="tst-image">
-                                             <img src={%  static "images/tst-image2.jpg" %} class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>Camila</h4>
-                                             <span>Marketing Manager</span>
-                                        </div>
-                                        <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="tst-image">
-                                             <img src={%  static "images/tst-image3.jpg" %} class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>Barbie</h4>
-                                             <span>Art Director</span>
-                                        </div>
-                                        <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="tst-image">
-                                             <img src={%  static "images/tst-image4.jpg" %} class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>Andrio</h4>
-                                             <span>Web Developer</span>
-                                        </div>
-                                        <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   </div>
-                              </div>
-
+                              {%endfor%}
                          </div>
+                         
 
                </div>
           </div>
@@ -370,21 +313,22 @@
                <div class="row">
 
                     <div class="col-md-6 col-sm-12">
-                         <form id="contact-form" role="form" action="" method="post">
+                         <form id="contact-form" role="form" action="{% url 'index' %}" method="post">
+                              {% csrf_token %}
                               <div class="section-title">
-                                   <h2>Contact us <small>we love conversations. let us talk!</small></h2>
+                                   <h2>Напишите нам <small>Если у вас остались вопросы мы всегда на связи</small></h2>
                               </div>
 
                               <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+                                   <input type="text" class="form-control" placeholder="Введите ваше имя" name="name" required="">
                     
-                                   <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+                                   <input type="email" class="form-control" placeholder="Введите электронную почту" name="email" required="">
 
-                                   <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                                   <textarea class="form-control" rows="6" placeholder="Напишите сообщение" name="message" required=""></textarea>
                               </div>
 
                               <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="Send Message">
+                                   <input type="submit" class="form-control" name="Отправить" value="Отправить">
                               </div>
 
                          </form>
@@ -399,7 +343,6 @@
                </div>
           </div>
      </section>       
-
 
      {% include "components/footer.html"%}
 

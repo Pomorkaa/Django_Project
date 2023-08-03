@@ -285,7 +285,7 @@ https://templatemo.com/tm-516-known
   }
 
   .custom-navbar .navbar-nav.navbar-right li a .fa {
-    background: #29ca8e;
+    /* background: #29ca8e; */
     border-radius: 100%;
     color: #ffffff;
     width: 30px;
@@ -444,7 +444,7 @@ https://templatemo.com/tm-516-known
   }
 
   #about figure span i {
-    background: #29ca8e;
+    /* background: #29ca8e; */
     border-radius: 50px;
     color: #ffffff;
     font-size: 25px;
@@ -580,7 +580,7 @@ https://templatemo.com/tm-516-known
   }
 
   .courses-price span {
-    background: #29ca8e;
+    /* background: #29ca8e; */
     border-radius: 2px;
     color: #ffffff;
     display: block;
@@ -815,7 +815,7 @@ https://templatemo.com/tm-516-known
   }
 
   .newsletter-form input[type="submit"]:hover {
-    background: #29ca8e;
+    /* background: #29ca8e; */
     border-color: transparent;
   }
 
@@ -859,7 +859,7 @@ https://templatemo.com/tm-516-known
   }
 
   .social-icon li a:hover {
-    background: #29ca8e;
+    /* background: #29ca8e; */
     color: #ffffff;
   }
 

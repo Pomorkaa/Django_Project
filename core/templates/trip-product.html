@@ -82,10 +82,43 @@
           </div>
      </section>
 
+     <section id="contact">
+          <div class="container">
+               <div class="row">
 
-     <!-- FOOTER -->
-     {% include "components/footer.html"%}
+                    <div class="col-md-6 col-sm-12">
+                         <form id="contact-form" role="form" action="" method="post">
+                              {% csrf_token %}
+                              <div class="section-title">
+                                   <h2>Напишите нам <small>Если у вас остались вопросы мы всегда на связи</small></h2>
+                              </div>
 
+                              <div class="col-md-12 col-sm-12">
+                                   <input type="text" class="form-control" placeholder="Введите ваше имя" name="name" required="">
+                    
+                                   
+
+                                   <textarea class="form-control" rows="6" placeholder="Напишите сообщение" name="message" required=""></textarea>
+
+                                   <input type="text" class="form-control" placeholder="Оцените услугу от 1 до 5 звезд" name="stars" required="">
+                              </div>
+
+                              <div class="col-md-4 col-sm-12">
+                                   <input type="submit" class="form-control" name="Отправить" value="Отправить">
+                              </div>
+
+                         </form>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="contact-image">
+                              <img src={%  static "images/contact-image.jpg" %} class="img-responsive" alt="Smiling Two Girls">
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>       
 
      <!-- SCRIPTS -->
      <script src={% static "js/jquery.js" %}></script>

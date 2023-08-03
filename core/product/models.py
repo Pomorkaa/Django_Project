@@ -110,3 +110,26 @@ class AdditionalImage(models.Model):
         name = self.image.name.partition(f"meia/trip{self.trip.name}/")[-1]
         url = self.image.url.replace(name, f"small_{name}")
         return url
+
+
+class Contact(models.Model):
+    """форма обратной связи"""
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.CharField(max_length=1000)
+    
+    class Meta:
+        verbose_name = "Запрос на консультацию"
+        verbose_name_plural = "Запросы на консультацию"
+        
+        
+class Feedback(models.Model):
+    name = models.CharField(max_length=100)
+    message = models.CharField(max_length=1000)
+    stars = models.PositiveIntegerField(
+        verbose_name="Количество звёзд", default=0, validators=[MinValueValidator(0), MaxValueValidator(5)]
+    )
+    
+    class Meta:
+        verbose_name = "Отзывы"
+        verbose_name_plural = "Отзывы"

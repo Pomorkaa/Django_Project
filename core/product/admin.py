@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Status, Trip, Trip_type ,  AdditionalImage , AdditionalOptions
+from .models import Status, Trip, Trip_type ,  AdditionalImage , AdditionalOptions , Contact, Feedback
 from django.contrib.admin.widgets import AdminFileWidget
 from django.utils.html import format_html
 from django.db import models
@@ -58,8 +58,18 @@ class TripInline(admin.StackedInline):
 class AdditionalOptionsModelAdmin(admin.ModelAdmin):
     list_display = ("option",)
 
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ('name', 'message', 'stars',)
+    list_per_page = 20
+    
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'message',)
+    list_per_page = 20
+
 
 admin.site.register(Trip,TripAdmin)
 admin.site.register(Status, StatusTripAdmin)
 admin.site.register(Trip_type)
 admin.site.register(AdditionalOptions, AdditionalOptionsModelAdmin)
+admin.site.register(Contact, ContactAdmin)
+admin.site.register(Feedback, FeedbackAdmin)
